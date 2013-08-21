@@ -1,0 +1,5 @@
+OMG! I am learning Scala and Akka!
+This project is just me following the samples available
+in the nice Akka Concurrency book.
+
+To run and test it use SBT invoke: 'sbt run'
