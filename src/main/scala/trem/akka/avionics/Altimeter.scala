@@ -7,9 +7,11 @@ import scala.concurrent.duration._
 object Altimeter {
   case class RateChange(amount: Float)
   case class AltimeterUpdate(altitude: Double)
+  def apply() = new Altimeter with RealEventSource
 }
 
-class Altimeter extends Actor with EventSource {
+class Altimeter extends Actor {
+  this: EventSource =>
   import Altimeter._
 
   implicit val ec = context.dispatcher

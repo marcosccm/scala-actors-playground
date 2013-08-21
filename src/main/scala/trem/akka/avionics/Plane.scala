@@ -11,7 +11,7 @@ class Plane extends Actor {
   import Plane._
   import EventSource._
 
-  val altimeter = context.actorOf(Props[Altimeter], "altimeter")
+  val altimeter = context.actorOf(Props(Altimeter()), "altimeter")
   val control = context.actorOf(Props(new ControlSurfaces(altimeter)), "controls")
 
   override def preStart() {
